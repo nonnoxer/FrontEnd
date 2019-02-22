@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>nonnox</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script src="{{ url_for('static', filename='script.js')}}"></script>
+	</head>
+	<body>
+		<div class="header">
+			<h1 class="headertext animated infinite pulse">NONNOX</h1>
+		</div>
+		<div class="row nav">
+			<div class="col">
+				<a href="/" class="navtext">Home</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8" id="gotoed">
+				<p>Welcom to the website of Natanael Tan.<p>
+				<p>He is some generic student who learns programming.</p>
+				<p>Heis<b>sec3</b>hestudiesin<b>rafflesinstitution</b>helivesin<b>singapore</b>heplaysthe<b>guitar</b>heknows<b>python</b>and<b>basichtml</b></p>
+				<p>isthisenough</p>
+				<p>His repositories are at <b><a href="https://github.com/nonnoxer" class="animated infinite flash">here</a></b>. They're mostly for fun :)</p>
+				<p>processing.py is my favourite mode of coding :o</p>
+				<p class="animated infinite rubberBand faster"><b>play demoman2048 mAgGoTtY pLeBiAnS</b></p>
+				<button onclick="count()">I bet I can count higher than you!</button><br>
+				<button onclick="goto()">CLICK ME FOR FUN AND GAMES</button>
+				<button onclick="destroy()">Self-destruct button</button>
+				<br>
+				<p>Totally not a phishing form:</p>
+				<p>"A webpage is never complete without a rickroll. 0/5 * for your terrible webpage."</p>
+				<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">A webpage reviewer</a></p>
+			</div>
+			<div class="col-2">
+				<img src="{{ url_for('static', filename='smiley.png')}}" width=100% class="animated infinite shake faster">
+				<img src="{{ url_for('static', filename='smiley.png')}}" width=100% class="animated infinite shake faster">
+			</div>
+			<div class="col-2">
+				<img src="{{ url_for('static', filename='smiley.png')}}" width=100% class="animated infinite shake faster">
+				<img src="{{ url_for('static', filename='smiley.png')}}" width=100% class="animated infinite shake faster">
+			</div>
+		</div>
+		<div id="signup">
+			<h2>Signup</h2>
+			<form action="/signup" method="post">
+				<label for="username">Username: </label>
+				<input type="text" name="username" id="username">
+				<br>
+				<label for="hobby">Password: </label>
+				<input type="password" name="password" id="password">
+				<br>
+				<input type="submit" value="Submit">
+			</form>
+			<p>Have an account? <button onclick="login();">Login</button></p>
+		</div>
+	</body>
+</html>

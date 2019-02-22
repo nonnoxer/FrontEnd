@@ -1,0 +1,19 @@
+.header {
+  background-color: black;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  color: white;
+  text-align: center;
+  font-family: Optima, sans-serif;
+}
+.nav{
+  background-color: grey;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  color: white;
+  text-align: center;
+}
+p {
+  text-align: justify;
+  margin: 10px;
+}
