@@ -12,9 +12,9 @@ def login():
         password = request.form["password"]
         with sqlite.connect("database.db") as conn:
             cur = conn.cursor()
-            results = cur.execute("SELECT username FROM users WHERE username==? AND password==?;", (username,password)).fetchone()
+            results = cur.execute("SELECT username FROM users WHERE username=? AND password=?;", (username,password)).fetchone()
         if results == None:
-            return "Error invalid credentials"
+            return render_template("gnom.html")
         else:
             return "Hello " + results[0]
     else: #method is get
@@ -27,9 +27,15 @@ def signup():
         password = request.form["password"]
         with sqlite.connect("database.db") as conn:
             cur = conn.cursor()
-            cur.execute("INSERT INTO users VALUES (?,?);", (username, password))
-            conn.commit()
-        return render_template("index.html")
+            results = cur.execute("SELECT username FROM users WHERE username=? AND password=?;", (username,password)).fetchone()
+        if results == None:
+            with sqlite.connect("database.db") as conn:
+                cur = conn.cursor()
+                cur.execute("INSERT INTO users VALUES (?,?);", (username, password))
+                conn.commit()
+            return render_template("index.html")
+        else:
+            return "Hello " + results[0]
 
 @app.route("/", methods=["GET", "POST"])
 def main():

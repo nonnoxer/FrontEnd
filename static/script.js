@@ -15,8 +15,8 @@ function destroy() {
 }
 
 function login() {
-  $("#signup").html('<div id="login"><h2>Login</h2><form action="/login" method="post"><label for="username">Username: </label><input type="text" name="username" id="username"><br><label for="hobby">Password: </label><input type="password" name="password" id="password"><br><input type="submit" value="Submit"></form><p>Need an account? <button onclick="signup();">Signup</button></p></div>');
+  $("#signup").html('<div id="login"><h2>Login</h2><form action="/login" method="POST"><label for="username">Username: </label><input type="text" name="username" id="username"><br><label for="hobby">Password: </label><input type="password" name="password" id="password"><br><input type="submit" value="Submit"></form><p>Need an account? <button onclick="signup();">Signup</button></p></div>');
 }
 function signup() {
-  $("#login").html('<div id="signup"><h2>Signup</h2><form action="/signup" method="post"><label for="username">Username: </label><input type="text" name="username" id="username"><br><label for="hobby">Password: </label><input type="password" name="password" id="password"><br><input type="submit" value="Submit"></form><p>Have an account? <button onclick="login();">Login</button></p></div>');
+  $("#login").html('<div id="signup"><h2>Signup</h2><form action="/signup" method="POST"><label for="username">Username: </label><input type="text" name="username" id="username"><br><label for="hobby">Password: </label><input type="password" name="password" id="password"><br><input type="submit" value="Submit"></form><p>Have an account? <button onclick="login();">Login</button></p></div>');
 }
